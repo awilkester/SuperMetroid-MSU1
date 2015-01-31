@@ -1,0 +1,9 @@
+Super Metroid
+3145728 Bytes (24.0000 Mb)
+Padded: Maybe, 11041 Bytes (0.0842 Mb)
+HiROM: No
+Version: 1.0
+Checksum: Ok, 0xf8df (calculated) == 0xf8df (internal)
+Inverse checksum: Ok, 0x0720 (calculated) == 0x0720 (internal)
+Checksum (CRC32): 0xd63ed5f8
+

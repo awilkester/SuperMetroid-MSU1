@@ -60,4 +60,70 @@ make_all.bat does everything
 ===============
 = Music files =
 ===============
+01 = Samus Aran's Appearance fanfare
+02 = Item acquisition fanfare
+03 = Item room
 
+// Bank $03 - Opening
+04 = Opening with intro
+05 = Opening without intro
+
+// Bank $06 - Crateria (First Landing)
+06 = Arrival on Crateria (with thunder FX)
+07 = Arrival on Crateria (without thunder FX)
+
+// Bank $09 - Crateria
+08 = The Space Pirates Appear
+09 = Statue Room
+
+// Bank $0C - Samus's Ship
+10 = Samus's Ship
+
+// Bank $0F - Brinstar with vegetation
+11 = Brinstar with vegetation
+
+// Bank $12 - Brinstar Red Soil
+12 = Brinstar Red Soil
+
+// Bank $15 - Upper Norfair
+13 = Upper Norfair
+
+// Bank $18 - Lower Norfair
+14 = Lower Norfair
+
+// Bank $1B - Maridia
+15 = Upper Maridia
+16 = Lower Maridia
+
+// Bank $1E - Tourian
+17 = Tourian
+
+// Bank $21 - Mother Brain Battle
+18 = Mother Brain Battle
+
+// Bank $24 - Big Boss Battle 1
+19 = Big Boss Battle 1
+20 = Mysterious Statue Chamber
+
+// Bank $27 - Big Boss Battle 2
+21 = Big Boss Battle 2
+22 = Tension / Hostile Incoming
+
+// Bank $2A - Plant Miniboss
+23 = Plant Miniboss
+
+// Bank $2D - Ceres Station
+24 = Ceres Station
+
+// Bank $30 - Wrecked Ship
+25 = Wrecked Ship Power Off
+26 = Wrecked Ship Power On
+
+// Bank $36 - Theme of Super Metroid
+27 = Theme of Super Metroid
+
+// Bank $39 - Death Cry
+28 = Death Cry
+
+// Bank $3C - Ending
+29 = Ending

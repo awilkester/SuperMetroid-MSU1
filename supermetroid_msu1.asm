@@ -28,6 +28,8 @@ if {defined EMULATOR_VOLUME} {
 }
 
 // Game variables
+variable RequestedMusic($063D)
+variable CurrentMusic($064C)
 variable MusicBank($07F3)
 
 // **********
@@ -59,31 +61,39 @@ scope MSU_Main: {
 	
 	sep #$30
 	
-	// Set data bank
+	// Make sure the data bank is set to $80
 	lda #$80
 	pha
 	plb
 	
 	CheckMSUPresence(OriginalCode)
 	
-	lda.w $063D
+	// Load current requested music
+	lda.w RequestedMusic
 	and.b #$7F
 	beq StopMSUMusic
 	
+	// $04 is usually ambience, call original code
 	cmp.b #$04
 	beq OriginalCode
 	
 	// Check if the song is already playing
-	cmp.w $064C
+	cmp.w CurrentMusic
 	beq MSU_Exit
 	
+	// If the requested music is less than 4
+	// it's the common music, skip to play music
 	cmp.b #$05
 	bmi PlayMusic
 	
+	// If requested music is greater or equal to 5
+	// Figure out which music to play depending of
+	// the current music bank
 	sec
 	sbc.b #$05
 	tay
 	
+	// Load music bank and divide it by 3
 	lda.w MusicBank
 	ldx.b #$00
 	sec
@@ -93,12 +103,14 @@ scope MSU_Main: {
 	inx
 	bne -
 +;
+	// Load music mapping pointer for current bank
 	txa
 	asl
 	tax
 	rep #$20
 	lda.l MusicMappingPointers,x
 	sta.b $00
+	// Load music to play from pointer
 	sep #$20
 	lda ($00),y
 	
@@ -205,31 +217,31 @@ bank_1E: // Tourian
 bank_21: // Mother Brain Battle
 	db 18
 bank_24: // Big Boss Battle 1 (3rd is with alarm)
-	db 19,20,19
+	db 19,21,20
 bank_27: // Big Boss Battle 2
-	db 21,22
+	db 22,23
 bank_2A: // Plant Miniboss
-	db 23
+	db 24
 bank_2D: // Ceres Station
-	db 00,24,00
+	db 00,25,00
 bank_30: // Wrecked Ship
-	db 25,26
+	db 26,27
 bank_33: // Ambience SFX
 	db 00,00,00
 bank_36: // Theme of Super Metroid
-	db 27
-bank_39: // Death Cry
 	db 28
-bank_3C: // Ending
+bank_39: // Death Cry
 	db 29
+bank_3C: // Ending
+	db 30
 bank_3F: // "The Last Metroid"
 	db 00
 bank_42: // "is at peace"
 	db 00
 bank_45: // Big Boss Battle 2
-	db 21,22
-bank_48: // Theme of Samus Aran (Mother Brain)
-	db 27
+	db 22,23
+bank_48: // Samus's Ship (Mother Brain)
+	db 10
 }
 
 scope TrackNeedLooping: {
@@ -240,10 +252,10 @@ scope TrackNeedLooping: {
 	cpy.b #02
 	beq NoLooping
 // Death fanfare
-	cpy.b #28
+	cpy.b #29
 	beq NoLooping
 // Ending
-	cpy.b #29
+	cpy.b #30
 	beq NoLooping
 
 	lda.b #$03

@@ -104,26 +104,27 @@ make_all.bat does everything
 // Bank $24 - Big Boss Battle 1
 19 = Big Boss Battle 1
 20 = Mysterious Statue Chamber
+21 = Evacuation
 
 // Bank $27 - Big Boss Battle 2
-21 = Big Boss Battle 2
-22 = Tension / Hostile Incoming
+22 = Big Boss Battle 2
+23 = Tension / Hostile Incoming
 
 // Bank $2A - Plant Miniboss
-23 = Plant Miniboss
+24 = Plant Miniboss
 
 // Bank $2D - Ceres Station
-24 = Ceres Station
+25 = Ceres Station
 
 // Bank $30 - Wrecked Ship
-25 = Wrecked Ship Power Off
-26 = Wrecked Ship Power On
+26 = Wrecked Ship Power Off
+27 = Wrecked Ship Power On
 
 // Bank $36 - Theme of Super Metroid
-27 = Theme of Super Metroid
+28 = Theme of Super Metroid
 
 // Bank $39 - Death Cry
-28 = Death Cry
+29 = Death Cry
 
 // Bank $3C - Ending
-29 = Ending
+30 = Ending

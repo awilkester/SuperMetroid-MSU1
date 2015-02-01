@@ -83,7 +83,7 @@ Bank $1B (Maridia)
 Bank $24 (Big Boss Battle 1)
 05 = Boss Battle (Big Boss 1)
 06 = Boss tension (Mysterious Statue Chamber)
-07 = Alarm on top of music
+07 = Alarm on top of music (Evacuation)
 
 Bank $27 (Big Boss 2)
 06 = Big Boss 2 Tension (SPC Tention)

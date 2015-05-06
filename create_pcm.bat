@@ -5,7 +5,7 @@ del *.pcm
 wav2msu -o supermetroid_msu1-1.pcm 01_samus_aran_appearance_fanfare.wav
 wav2msu -o supermetroid_msu1-2.pcm 02_item_acquisition_fanfare.wav
 wav2msu -o supermetroid_msu1-3.pcm 03_item_room.wav
-wav2msu -o supermetroid_msu1-4.pcm 04_opening.wav
+wav2msu -o supermetroid_msu1-4.pcm -l 1118744 04_opening.wav
 wav2msu -o supermetroid_msu1-5.pcm 05_opening_no_intro.wav
 wav2msu -o supermetroid_msu1-6.pcm -l 32219  06_arrival_on_crateria.wav
 wav2msu -o supermetroid_msu1-7.pcm 07_arrival_on_crateria_no_fx.wav

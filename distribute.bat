@@ -18,7 +18,7 @@ copy supermetroid_msu1.xml SuperMetroid_MSU1
 copy manifest.bml SuperMetroid_MSU1
 "C:\Program Files\7-Zip\7z" a -r SuperMetroidMSU1.zip SuperMetroid_MSU1
 
-rem "C:\Program Files\7-Zip\7z" a MegaManMSU1_Music.7z *.pcm
+"C:\Program Files\7-Zip\7z" a SuperMetroidMSU1_Music.7z *.pcm
 
 del /q supermetroid_msu1.ips
 del /q supermetroid_msu1_emulator.ips

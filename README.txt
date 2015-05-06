@@ -1,5 +1,5 @@
 Super Metroid MSU-1 hack
-Version 1.0 (WIP)
+Version 1.0
 by DarkShock
 
 This hack adds CD quality audio to Super Metroid using the MSU-1 chip invented by byuu.
@@ -12,10 +12,7 @@ Note they are two IPS patches:
 - supermetroid_msu1_emulator.ips is the one to use for proper volume in emulators.
 - supermetroid_msu1.ips for SD2SNES
 
-========
-= TODO =
-========
-*
+Music pack is available at: http://www.mediafire.com/download/euj8ewjv59d2022/SuperMetroidMSU1_Music.7z
 
 ===============
 = Using higan =
@@ -36,6 +33,12 @@ Just patch the ROM and launch the game. The pcm file needs to be in the same fol
 ====================
 Drop the ROM file, supermetroid_msu1.msu and the .pcm files in any folder. (I really suggest creating a folder)
 Launch the game and voilà, enjoy !
+
+===========
+= Credits =
+===========
+* DarkShock - ASM hacking & coding, music editing
+* Blake Robinson - Reorchestration (http://syntheticorchestra.com/)
 
 =============
 = Compiling =
@@ -58,7 +61,7 @@ distribute.bat distribute the patch
 make_all.bat does everything
 
 ===============
-= Music files =
+= Music indexes =
 ===============
 01 = Samus Aran's Appearance fanfare
 02 = Item acquisition fanfare

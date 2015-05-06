@@ -20,11 +20,9 @@ constant MSU_STATUS_DATA_BUSY(%10000000)
 
 // Constants
 if {defined EMULATOR_VOLUME} {
-	constant FULL_VOLUME($50)
-	constant DUCKED_VOLUME($20)
+	constant FULL_VOLUME($60)
 } else {
 	constant FULL_VOLUME($FF)
-	constant DUCKED_VOLUME($60)
 }
 
 // Game variables
@@ -120,7 +118,7 @@ PlayMusic:
 	tay
 	sta.w MSU_AUDIO_TRACK_LO
 	stz.w MSU_AUDIO_TRACK_HI
-
+	
 CheckAudioStatus:
 	lda.w MSU_STATUS
 	and.b #MSU_STATUS_AUDIO_BUSY
@@ -129,7 +127,7 @@ CheckAudioStatus:
 	// Check if track is missing
 	lda.w MSU_STATUS
 	and.b #MSU_STATUS_TRACK_MISSING
-	bne OriginalCode
+	bne StopMSUMusic
 	
 	// Play the song and add repeat if needed
 	jsr TrackNeedLooping
@@ -138,6 +136,9 @@ CheckAudioStatus:
 	// Set volume
 	lda.b #FULL_VOLUME
 	sta.w MSU_AUDIO_VOLUME
+	
+	// Stop SPC music
+	stz SPC_COMM_0
 	
 MSU_Exit:
 	rep #$30
